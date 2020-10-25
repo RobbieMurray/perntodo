@@ -77,6 +77,10 @@ app.delete("/todos/:id", async (req, res) => {
   }
 });
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
+
 app.listen(5000, () => {
   console.log(`server has started on port ${PORT}`);
 });
